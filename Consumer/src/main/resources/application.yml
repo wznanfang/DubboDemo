@@ -1,0 +1,17 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: consumer-service
+
+dubbo:
+  application:
+    name: consumer-dubbo-service
+  registry:
+    address: nacos://localhost:8848  # Nacos 注册中心地址
+    group: default-dubbo
+    parameters:
+      namespace: default-dubbo
+  protocol:
+    name: dubbo

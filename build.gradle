@@ -1,0 +1,37 @@
+plugins {
+    id 'org.springframework.boot' version '3.0.2'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+    id 'war'
+}
+
+group = 'com.wzp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+
+    repositories {
+        mavenLocal()
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2022.0.0.0-RC2'
+        implementation 'org.apache.dubbo:dubbo-spring-boot-starter:3.2.4'
+        implementation 'org.projectlombok:lombok:1.18.28'
+
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:2022.0.0.0-RC2"
+        }
+    }
+}
+
