@@ -9,6 +9,12 @@ group = 'com.wzp'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
+ext {
+    nacos_version = "2022.0.0.0-RC2"
+    dubbo_version = "3.2.4"
+    lombok_version = "1.18.28"
+}
+
 subprojects {
     apply plugin: 'java'
     apply plugin: 'io.spring.dependency-management'
@@ -22,9 +28,9 @@ subprojects {
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter'
         implementation 'org.springframework.boot:spring-boot-starter-web'
-        implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2022.0.0.0-RC2'
-        implementation 'org.apache.dubbo:dubbo-spring-boot-starter:3.2.4'
-        implementation 'org.projectlombok:lombok:1.18.28'
+        implementation "com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:${nacos_version}"
+        implementation "org.apache.dubbo:dubbo-spring-boot-starter:${dubbo_version}"
+        implementation "org.projectlombok:lombok:${dubbo_version}"
 
     }
 
