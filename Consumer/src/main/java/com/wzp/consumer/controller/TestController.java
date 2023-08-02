@@ -3,6 +3,7 @@ package com.wzp.consumer.controller;
 import com.wzp.consumer.service.TestService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -17,8 +18,8 @@ public class TestController {
 
 
     @GetMapping("/test")
-    public String test() {
-        return testService.getName();
+    public String test(@RequestParam String username) {
+        return testService.getName(username);
     }
 
 

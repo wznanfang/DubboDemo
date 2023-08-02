@@ -14,13 +14,10 @@ public class ProviderDubboServiceImpl implements ProviderDubboService {
 
 
     @Override
-    public String getName() {
-        String name;
-        try {
-            name = "南风落尽";
-            System.err.println(1 / 0);
-        } catch (Exception e) {
-            throw new RuntimeException("数据错误!");
+    public String getName(String username) {
+        String name = "南风落尽";
+        if (!username.equals(name)) {
+            throw new RuntimeException("哦豁, 数据错误嘞!");
         }
         return name;
     }

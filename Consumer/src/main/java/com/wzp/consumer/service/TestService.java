@@ -6,5 +6,5 @@ package com.wzp.consumer.service;
  */
 public interface TestService {
 
-    String getName();
+    String getName(String username);
 }

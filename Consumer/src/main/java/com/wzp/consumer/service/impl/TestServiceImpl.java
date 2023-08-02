@@ -17,13 +17,7 @@ public class TestServiceImpl implements TestService {
 
 
     @Override
-    public String getName() {
-        String name = null;
-        try {
-            name = providerDubboService.getName();
-        }catch (Exception e){
-            System.err.println(e.getMessage());
-        }
-        return name;
+    public String getName(String username) {
+        return providerDubboService.getName(username);
     }
 }

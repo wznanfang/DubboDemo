@@ -6,6 +6,6 @@ package com.wzp.provider.service;
  */
 public interface ProviderDubboService {
 
-    String getName();
+    String getName(String username);
 
 }
