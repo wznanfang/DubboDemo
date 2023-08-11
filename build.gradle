@@ -30,7 +30,7 @@ subprojects {
         implementation 'org.springframework.boot:spring-boot-starter-web'
         implementation "com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:${nacos_version}"
         implementation "org.apache.dubbo:dubbo-spring-boot-starter:${dubbo_version}"
-        implementation "org.projectlombok:lombok:${dubbo_version}"
+        implementation "org.projectlombok:lombok:${lombok_version}"
 
     }
 
