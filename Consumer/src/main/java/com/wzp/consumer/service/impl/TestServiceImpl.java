@@ -3,6 +3,7 @@ package com.wzp.consumer.service.impl;
 import com.wzp.consumer.service.TestService;
 import com.wzp.provider.service.ProviderDubboService;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.dubbo.rpc.RpcException;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,6 +19,15 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public String getName(String username) {
-        return providerDubboService.getName(username);
+        String name = null;
+        try {
+            name = providerDubboService.getName(username);
+        } catch (RpcException re) {
+            String errorMessage = re.getMessage();
+            System.err.println(errorMessage);
+        }
+        return name;
     }
+
+
 }
